@@ -1,0 +1,32 @@
+#webgl {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.control-info {
+    color: #fff;
+    float: left;
+    margin-left: 50px;
+    font-family: sans-serif;
+}
+
+.control-div {
+    width: 100%;
+}
+
+.demo-title {
+    color: #fff;
+    margin: 5px 50px;
+    font-family: sans-serif;
+}
+
+.demo-name {
+    color: #fff;
+    margin: 0 50px;
+    font-family: sans-serif;
+}

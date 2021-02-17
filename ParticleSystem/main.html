@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Project 1</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <body onload="main()">
+    <canvas id="webgl" width="2000" height="1200">
+      Please use a browser that supports "canvas"
+    </canvas> 
+    <br />
+    <h1 class="demo-title">Project 1 Final Demo</h1> 
+    <p class="demo-name">Jing Jiang</p>
+    <div class="control-div">
+      <p class="control-info">
+        <b>View Control<br></b>
+      WASD: move forward/back/left/right. <br>
+      QE: rotate angle left/right. <br>
+      ZC: rotate angle up/down. <br>
+      PL: move up/down. <br>
+      </p>
+      <p class="control-info">
+        <b>Select Solver<br></b>
+        <select id="solver-type-text" onchange="Change_Solver_Dropdown(this)">
+          <option value="0">Euler</option>
+          <option value="1">Midpoint</option>
+          <option value="2">Runge Kutta</option>
+          <option value="3" selected="selected">Implicit Euler</option>
+          <option value="4">Implicit Midpoint</option>
+        </select>
+      </p>
+      <p class="control-info">
+        <b>Particle System 1: Wind (bottom left)<br></b>
+        <button onclick="Interaction_Wind()">Change Wind Direction</button> or "I" key <br>
+        <b>Particle System 2: Boids (top right)<br></b>
+        <button onclick="Interaction_Boids()">Switch Obstacle Position</button> or "U" key <br>
+      </p>
+      <p class="control-info">
+        <b>Particle System 3: Fire (bottom right)<br></b>
+        <button onclick="Interaction_Fire()">Change Fire Color</button> or "Y" key <br>
+        <b>Particle System 4: Rope (top left)<br></b>
+        <button onclick="Interaction_Rope()">Switch Rope Left End Position</button> or "O" key <br>
+      </p>
+    </div>
+  <br>
+
+	<!--	Load in the JavaScript libraries supplied by our textbook 
+			(Matsuda et al., 2013 WebGL Programming Guide) that help us
+			with WebGL programming:
+	-->
+    <script src="./lib/webgl-utils.js"></script>
+    <script src="./lib/webgl-debug.js"></script>
+    <script src="./lib/cuon-utils.js"></script>
+	<!-- We modified the library cuon-matrix.js from the book 
+		"WebGL Programming Guide"(K. Matsuda, 2013),
+		to add matrix-stack and quaternion capabilities, 
+		and renamed it cuon-matrix-quat.js -->
+    <script src="./lib/cuon-matrix-quat03.js"></script> 
+	<!--	Finally, load in our own JavaScript program files:
+	-->
+		<script src="./src/PartSys.js"></script>
+    <script src="./src/CForcer.js"></script>
+    <script src="./src/CLimit.js"></script>
+    <script src="./src/Shaders.js"></script>
+    <script src="./src/Inits.js"></script>
+    <script src="./src/Helpers.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
